@@ -6,6 +6,11 @@ $fname = filter_input(INPUT_POST, 'fname');
 $name = filter_input(INPUT_POST, 'name');
 $age = filter_input(INPUT_POST, 'age');
 $gender = filter_input(INPUT_POST, 'radio');
+$pwhash = password_hash($pw, PASSWORD_DEFAULT);
+
+echo $email;
+echo $pw;
+echo $nickname;
 
 
     $sqlhost = "localhost";
@@ -19,7 +24,7 @@ $gender = filter_input(INPUT_POST, 'radio');
         die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
         $SELECT = "SELECT email From user_table Where email = ? Limit 1";
-        $INSERT = "INSERT Into user_table (name, first_name, nickname, email, password, age, sex) values($name, $fname, $nickname, $email, $pw, $age, $gender)";
+        $INSERT = "INSERT Into user_table (name, first_name, nickname, email, password, age, sex) values(?, ?, ?, ?, ?, ?, ?)";
 
 
         $stmt = $my_db->prepare($SELECT);
@@ -29,13 +34,16 @@ $gender = filter_input(INPUT_POST, 'radio');
         $stmt->store_result();
         $rnum = $stmt->num_rows;
 
+        echo $rnum;
+
         if ($rnum==0) {
             $stmt->close();
 
             if ($stmt = $my_db->prepare($INSERT)){
-            $stmt->bind_param('sssssis', $name, $fname, $nickname, $email, $pw, $age, $gender);
+            $stmt->bind_param('sssssis', $name, $fname, $nickname, $email, $pwhash, $age, $gender);
             $stmt->execute();
             echo "New record inserted successfully";
+            echo $pwhash;
 
             $stmt->close();
             $my_db->close();

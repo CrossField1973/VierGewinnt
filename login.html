@@ -4,17 +4,19 @@
         <link rel="stylesheet" href="login.css">
         </head>
         <body>
+            <form method="GET" action="login.php">
             <div class="login-box">
                 <h1>Login</h1>
                 <div class="textbox">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" placeholder="Username" name="" value="">
+                    <input type="email" placeholder="Email" name="email" value="">
                 </div>
                 <div class="textbox">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Password" name="" value="">
+                    <input type="password" placeholder="Password" name="pw" value="">
                 </div>
-                <input class="btn" type="button" name="" value="Sign in">
+                <input class="btn" type="submit" name="" value="Sign in">
+            </form> 
                 <a href="register.html">
                     <input class="btn" type="button" name="" value="Register" >
                 </a>

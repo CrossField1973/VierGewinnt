@@ -55,6 +55,9 @@ body{
     margin-top: 20px;
     cursor: pointer;
 }
+a:link{
+  text-decoration: none;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
