@@ -14,6 +14,7 @@ if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
     if (password_verify($_GET['pw'], $dbdata['password'])) {
       $message = "Signed In";
       echo "<script type='text/javascript'>alert('$message');</script>";
+      header("Location: ../HTML/lobby.html");
     } else{
       $message = "Wrong Email or Password";
       echo "<script type='text/javascript'>alert('$message');</script>";
