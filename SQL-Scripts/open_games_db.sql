@@ -1,0 +1,1 @@
+CREATE TABLE `viergewinnt`.`games` ( `id` INT NOT NULL AUTO_INCREMENT , `state_of_game` VARCHAR(42) NOT NULL , `red` VARCHAR(15) NOT NULL , `yellow` VARCHAR(15) NOT NULL , `turn` VARCHAR(15) NOT NULL , UNIQUE (`id`)) ENGINE = InnoDB;
