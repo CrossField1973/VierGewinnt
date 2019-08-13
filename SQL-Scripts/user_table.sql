@@ -33,7 +33,7 @@ CREATE TABLE `user_table` (
   `first_name` varchar(20) COLLATE latin1_german1_ci DEFAULT NULL,
   `nickname` varchar(20) COLLATE latin1_german1_ci NOT NULL,
   `email` varchar(40) COLLATE latin1_german1_ci NOT NULL,
-  `password` varchar(30) COLLATE latin1_german1_ci NOT NULL,
+  `password` varchar(100) COLLATE latin1_german1_ci NOT NULL,
   `age` int(11) DEFAULT NULL,
   `sex` varchar(10) COLLATE latin1_german1_ci DEFAULT NULL,
   `ID` int(11) NOT NULL
