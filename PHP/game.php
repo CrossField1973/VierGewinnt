@@ -18,13 +18,89 @@
 
     if ($result->num_rows != 1) 
     {
+        //Redirect to lobby, or error message page
         header("Location: http://example.com/error.php");
         die();
     }
 
     $row = $result->fetch_assoc();
 
-    
+    //Check if Winner is recided
+    //Check, if its winner or loser and handle asynchron
+    for($c = 0; $c < 21; $c++)
+    {
+	    if($row["state_of_game"][$c] == 1 && $row["state_of_game"][$c + 7] == 1 && $row["state_of_game"][$c + 14] == 1 && $row["state_of_game"][$c + 21] == 1)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+        }
+        
+        else if($row["state_of_game"][$c] == 2 && $row["state_of_game"][$c + 7] == 2 && $row["state_of_game"][$c + 14] == 2 && $row["state_of_game"][$c + 21] == 2)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+    }
+
+    for($c = 0; $c < 39; $c++)
+    {
+	    if($row["state_of_game"][$c] == 1 && $row["state_of_game"][$c + 1] == 1 && $row["state_of_game"][$c + 2] == 1 && $row["state_of_game"][$c + 3] == 1)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+	    else if($row["state_of_game"][$c] == 2 && $row["state_of_game"][$c + 1] == 2 && $row["state_of_game"][$c + 2] == 2 && $row["state_of_game"][$c + 3] == 2)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+	    if($c % 7 == 3)
+	    {
+		    $c += 6;
+	    }
+    }
+
+    for($c = 0; $c < 18; $c++)
+    {
+	    if($row["state_of_game"][$c] == 1 && $row["state_of_game"][$c + 8] == 1 && $row["state_of_game"][$c + 16] == 1 && $row["state_of_game"][$c + 24] == 1)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+	    else if($row["state_of_game"][$c] == 2 && [$c + 8] == 2 && $row["state_of_game"][$c + 16] == 2 && $row["state_of_game"][$c + 24] == 2)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+    	if($c % 7 == 3)
+	    {
+		    $c += 6;
+	    }
+    }
+
+    for($c = 0; $c < 18; $c++)
+    {
+	    if($row["state_of_game"][$c + 3] == 1 && $row["state_of_game"][$c + 9] == 1 && $row["state_of_game"][$c + 15] == 1 && $row["state_of_game"][$c + 21] == 1)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+	    else if($row["state_of_game"][$c + 3] == 2 && $row["state_of_game"][$c + 9] == 2 && $row["state_of_game"][$c + 15] == 2 && $row["state_of_game"][$c + 21] == 2)
+	    {
+		    header("Location: http://example.com/error.php");
+        	die();
+	    }
+
+	    if($c % 7 == 3)
+	    {
+		    $c += 6;
+	    }
+    }    
 ?>
 
 <html>
@@ -75,6 +151,7 @@
                 ?>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 <input type="button" value="Return to Lobby" onclick="location.href = 'http://www.google.com'">
+                <input type="button" value="Update Page" onclick="javascript:update_page()">
             </div>
         </div>
         <?php
@@ -113,11 +190,12 @@
                     
                     if($i < 0)
                     {
-                        //write messagebox invalid turn
+                        echo "<script type='text/javascript'>alert('Turn is not possible\nplease choose a possible turn.');</script>";
                     }
                 }
             }
 
+            //Update
             //Check, if database was updated
             //while()
         ?>
