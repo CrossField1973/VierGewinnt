@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Viergewinnt Lobby</title>
+        <link rel="stylesheet" href="lobby.css">
+        </head>
+        <body>
+		<script>
+		function addAChild () {
+		  var myBox = document.createElement('div');
+		  myBox.setAttribute("class","game1");
+		  var myBox2 = document.createElement('div');
+		  var myIdText = document.createTextNode('Game 1')
+		  myBox2.setAttribute("class","gameid");
+		  myBox2.appendChild(myIdText);
+		  myBox.appendChild(myBox2);
+		  var myBtn = document.createElement('button');
+		  myBtn.setAttribute("type","button");
+		  myBtn.setAttribute("class","joinbtn");
+		  var myBtnText = document.createTextNode('JOIN');
+		  myBtn.appendChild(myBtnText);
+		  var myCre = document.createElement('div');
+		  myCre.setAttribute("class","creator");
+		  var myText = document.createTextNode('Erstellt von *User*');
+		  myCre.appendChild(myText);
+		  
+		  var Ausgabebereich = document.getElementsByClassName('lobby-box');
+		  var add = document.getElementById('add');
+			Ausgabebereich[0].insertBefore(myBox, add);
+			myBox.appendChild(myBtn);
+			myBox.appendChild(myCre);
+		}
+		
+		function logout() {
+			alert("Logout successfully!");
+		}
+		</script>
+			<div class="dashboard">
+				<div class="logo">VierGewinnt</div>
+				<a href="login.html"><button type="button" class="logoutbtn" onclick="logout()">LOGOUT</button></a>
+				<button type="button" class="sbtn">SETTINGS</button>
+				<a href="lobby.html"><button type="button" class="homebtn">HOME</button></a>
+			</div>
+            <div class="lobby-box">
+			
+                <h1 class="titel">LOBBY</h1>
+				<div class="welbox">
+					Welcome back *User* 
+				</div>
+                <!--
+				<div class="game1">
+					<div class="gameid">
+						Game 1
+					</div>
+					<button type="button" class="joinbtn">JOIN</button>
+					<div class="creator">
+						Erstellt von *User*
+					</div>
+				
+				</div>
+				-->
+				<div class="gameadd" id="add">				
+					<button type="button" class="addbtn" onclick="addAChild()">+</button>
+				</div>
+            </div>
+        </body>
+</html>
