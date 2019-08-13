@@ -8,9 +8,9 @@ $age = filter_input(INPUT_POST, 'age');
 $gender = filter_input(INPUT_POST, 'radio');
 $pwhash = password_hash($pw, PASSWORD_DEFAULT);
 
-echo $email;
-echo $pw;
-echo $nickname;
+//echo $email;
+//echo $pw;
+//echo $nickname;
 
 
     $sqlhost = "localhost";
@@ -34,7 +34,7 @@ echo $nickname;
         $stmt->store_result();
         $rnum = $stmt->num_rows;
 
-        echo $rnum;
+        //echo $rnum;
 
         if ($rnum==0) {
             $stmt->close();
