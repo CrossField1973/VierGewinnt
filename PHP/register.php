@@ -50,9 +50,12 @@ echo $nickname;
             } else {
                 echo "FAIL";
             }
+            
+            header("Location: ../HTML/lobby.html");
         }
         else{
-            echo "Someone already registered with this Email";
+            $message = "Someone already registered with this Email";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
 
