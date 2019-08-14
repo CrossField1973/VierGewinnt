@@ -21,11 +21,10 @@
         
         }
 
+
+
+
 ?>
-
-
-
-
 
 
 <html>
@@ -36,7 +35,7 @@
 </head>
 
 <body>
-  <form action="../PHP/settings.php" method="post">
+  <form action="../PHP/updatesettings.php" method="post">
     <div class="register-box">
       <h1>Settings</h1>
       
