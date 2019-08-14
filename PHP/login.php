@@ -25,14 +25,18 @@ if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
         
           setcookie("token", $token, time() + (86400 * 30), "/");
 
+          $message = "Signed In";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+          header("Location: ../PHP/lobby.php");
+
+        } else {
+
+          $message = "Wrong Email or Password";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+          header("Location: ../HTML/login.html");
+
         }
 
-
-
-      $message = "Signed In";
-      echo "<script type='text/javascript'>alert('$message');</script>";
-      header("Location: ../PHP/lobby.php");
-    
     } else{
       
       $message = "Wrong Email or Password";
