@@ -8,9 +8,21 @@ $age = filter_input(INPUT_POST, 'age');
 $gender = filter_input(INPUT_POST, 'radio');
 $pwhash = password_hash($pw, PASSWORD_DEFAULT);
 
-//echo $email;
-//echo $pw;
-//echo $nickname;
+function random_string() {
+    if(function_exists('random_bytes')) {
+       $bytes = random_bytes(16);
+       $str = bin2hex($bytes); 
+    } else if(function_exists('openssl_random_pseudo_bytes')) {
+       $bytes = openssl_random_pseudo_bytes(16);
+       $str = bin2hex($bytes); 
+    } else if(function_exists('mcrypt_create_iv')) {
+       $bytes = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
+       $str = bin2hex($bytes); 
+    } else {
+       $str = md5(uniqid('viergewinntgewinntwenn4', true));
+    }   
+    return $str;
+ }
 
 
     $sqlhost = "localhost";
@@ -24,8 +36,10 @@ $pwhash = password_hash($pw, PASSWORD_DEFAULT);
         die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
         $SELECT = "SELECT email From user_table Where email = ? Limit 1";
-        $INSERT = "INSERT Into user_table (name, first_name, nickname, email, password, age, sex) values(?, ?, ?, ?, ?, ?, ?)";
+        $INSERT = "INSERT INTO user_table (name, first_name, nickname, email, password, age, sex, identifier, securitytoken) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
+        $securitytoken = random_string();
+        $identifier = random_string();
 
         $stmt = $my_db->prepare($SELECT);
         $stmt->bind_param('s', $email);
@@ -34,16 +48,16 @@ $pwhash = password_hash($pw, PASSWORD_DEFAULT);
         $stmt->store_result();
         $rnum = $stmt->num_rows;
 
-        //echo $rnum;
-
         if ($rnum==0) {
             $stmt->close();
 
             if ($stmt = $my_db->prepare($INSERT)){
-            $stmt->bind_param('sssssis', $name, $fname, $nickname, $email, $pwhash, $age, $gender);
+            $stmt->bind_param('sssssisss', $name, $fname, $nickname, $email, $pwhash, $age, $gender, $identifier, $securitytoken);
             $stmt->execute();
             echo "New record inserted successfully";
             echo $pwhash;
+
+            setcookie("token", $securitytoken, time() + (86400 * 30), "/");
 
             $stmt->close();
             $my_db->close();
@@ -51,7 +65,7 @@ $pwhash = password_hash($pw, PASSWORD_DEFAULT);
                 echo "FAIL";
             }
             
-            header("Location: ../HTML/lobby.html");
+            header("Location: ../PHP/lobby.php");
         }
         else{
             $message = "Someone already registered with this Email";
