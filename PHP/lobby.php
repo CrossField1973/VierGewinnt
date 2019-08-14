@@ -31,14 +31,15 @@
 		}
 		
 		function logout() {
+			document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 			alert("Logout successfully!");
 		}
 		</script>
 			<div class="dashboard">
-				<div class="logo">VierGewinnt</div>
+				<div class="logo">4GEWINNT</div>
 				<a href="../HTML/login.html"><button type="button" class="logoutbtn" onclick="logout()">Logout</button></a>
 				<a href="../PHP/settings.php"><button type="button" class="sbtn">Settings</button></a>
-				<a href="lobby.html"><button type="button" class="homebtn">Home</button></a>
+				<!--<a href="lobby.php"><button type="button" class="homebtn">Home</button></a>-->
 			</div>
             <div class="lobby-box">
 			
