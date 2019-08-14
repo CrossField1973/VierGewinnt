@@ -37,7 +37,7 @@
 			<div class="dashboard">
 				<div class="logo">VierGewinnt</div>
 				<a href="../HTML/login.html"><button type="button" class="logoutbtn" onclick="logout()">Logout</button></a>
-				<a href="settings.html"><button type="button" class="sbtn">Settings</button></a>
+				<a href="../PHP/settings.php"><button type="button" class="sbtn">Settings</button></a>
 				<a href="lobby.html"><button type="button" class="homebtn">Home</button></a>
 			</div>
             <div class="lobby-box">
@@ -62,11 +62,11 @@
           				die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
         			} else {
 
-          			$READ = "SELECT name FROM user_table WHERE securitytoken='".$token."'";
+          			$READ = "SELECT first_name FROM user_table WHERE securitytoken='".$token."'";
           			$result = mysqli_query($my_db, $READ);
           
           			$row = $result->fetch_assoc();
-          			echo $row['name'];
+          			echo $row['first_name'];
         
         			}
 
