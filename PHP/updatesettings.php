@@ -35,36 +35,46 @@ function random_string() {
     if (mysqli_connect_error()) {
         die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
-        //"UPDATE MyGuests SET lastname='Doe' WHERE id=2"
-        $UPDATE = "UPDATE user_table SET password='".$pwhash."', nickname =  WHERE id='".$id."'";
+      
 
-        // name, first_name, nickname, email, password, age, sex, identifier, securitytoken
-        $securitytoken = random_string();
-        $identifier = random_string();
-
-
+        $token = $_COOKIE["token"];
         $READ = "SELECT name FROM user_table WHERE securitytoken='".$token."'";
         $result = mysqli_query($my_db, $READ);
           
         $row = $result->fetch_assoc();
-        $id = $row['id'];
+        $ID = $row['ID'];  
+      
+        $securitytoken = random_string();
+        $identifier = random_string();
+
+      //"UPDATE MyGuests SET lastname='Doe' WHERE id=2"
+        $UPDATE = "UPDATE user_table SET password='".$pwhash."', name = '".$name."', first_name = '".$fname."', age = ".$age." WHERE securitytoken='".$token."'";
+        // , securitytoken = '".$securitytoken."'
+        // name, first_name, nickname, email, password, age, sex, identifier, securitytoken
+        
 
 
         
+        
+
+
+        mysqli_query($my_db, $UPDATE);
+
+        /*
           if ($stmt = $my_db->prepare($UPDATE)){
             $stmt->bind_param('sssssisss', $name, $fname, $nickname, $email, $pwhash, $age, $gender, $identifier, $securitytoken);
             $stmt->execute();
             echo "New record inserted successfully";
             echo $pwhash;
+        */
+            //setcookie("token", $securitytoken, time() + (86400 * 30), "/");
 
-            setcookie("token", $securitytoken, time() + (86400 * 30), "/");
-
-            $stmt->close();
+            //$stmt->close();
             $my_db->close();
           
-          } else {
-                echo "FAIL";
-          }
+          //} else {
+          //      echo "FAIL";
+          //}
             
           header("Location: ../PHP/lobby.php");
         
