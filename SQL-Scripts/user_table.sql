@@ -18,6 +18,8 @@ CREATE TABLE `user_table` (
   `password` varchar(255) COLLATE latin1_german1_ci NOT NULL,
   `age` int(11) DEFAULT NULL,
   `sex` varchar(10) COLLATE latin1_german1_ci DEFAULT NULL,
+  `identifier` varchar(255) COLLATE latin1_german1_ci NOT NULL,
+  `securitytoken` varchar(255) COLLATE latin1_german1_ci NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
