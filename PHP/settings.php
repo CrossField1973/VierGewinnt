@@ -49,15 +49,15 @@
       </div>
       
       <?php echo  "<div class='textbox'>
-        <input type='text' placeholder='Nickname' name='nickname' value=".$row['nickname']." required>
+        <input type='text' placeholder='Nickname' name='nickname' value=".$row['nickname']." required readonly>
       </div>"
       ?>
 
       <?php echo  "<div class='textbox'>
-        <input type='text' placeholder='Firstname' name='fname' value='".$row['first_name']."' readonly>
+        <input type='text' placeholder='Firstname' name='fname' value='".$row['first_name']."'>
       </div>
       <div class='textbox'>
-        <input type='text' placeholder='Name' name='name' value=".$row['name']." readonly>
+        <input type='text' placeholder='Name' name='name' value=".$row['name'].">
       </div>"
       ?>
       
