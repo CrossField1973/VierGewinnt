@@ -5,7 +5,7 @@
         $sqlhost = "localhost";
         $sqluser = "root";
         $sqlpass = "";
-        $dbname  = "user_table";
+        $dbname  = "viergewinnt";
 
         $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
 
@@ -31,10 +31,27 @@
 
 <head>
   <title>Settings</title>
-  <link rel="stylesheet" href="../CSS/register.css">
+  <link rel="stylesheet" href="../CSS/settings.css">
 </head>
 
 <body>
+
+  	<!--Navigation Bar-->
+    <ul class="dashboard">
+			<li class="logo" style="display: inline">
+        <a href="http://192.168.92.106/VierGewinnt-Login/PHP/lobby.php">
+          <img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
+        </a>
+      </li>
+			<li style="display: inline">
+        <a href="../HTML/login.html">
+          <button type="button" class="logoutbtn" onclick="logout()">
+            Logout
+          </button>
+        </a>
+      </li>
+  </ul>
+
   <form action="../PHP/updatesettings.php" method="post">
     <div class="register-box">
       <h1>Settings</h1>
