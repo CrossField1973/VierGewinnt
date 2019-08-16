@@ -1,13 +1,7 @@
 <?php
-	if(isset($_COOKIE["token"]) && $_COOKIE["token"] != "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC;")
+	if(isset($_COOKIE["token"])
 	{
-		$token = $_COOKIE["token"];
-	}
-
-	else
-	{
-		header("Location: http://example.com/error.php");
-        die();
+	  $token = $_COOKIE["token"];
 	}
 
 	$sqlhost = "localhost";
@@ -19,6 +13,32 @@
 
 	if (mysqli_connect_error()) {
 		die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+	}
+
+	//Check, if user is logged in
+	$sql = "SELECT securitytoken FROM user_table";
+	$result = $my_db->query($sql);
+	$is_logged_in = false;
+
+	if($result->num_rows > 0)
+	{
+		if(isset($_COOKIE["token"]))
+		{
+			for($i = 0; $i < $result->num_rows; $i++)
+			{
+				$row = $result->fetch_assoc();
+				if($row["securitytoken"] == $_COOKIE["token"])
+				{
+					$is_logged_in = true;
+				}
+			}
+		}
+	}
+
+	if($is_logged_in == false)
+	{
+		header("Location: http://example.com/error.php");
+        die();
 	}
 ?>
 
@@ -85,7 +105,7 @@
 						for($i = 1; $i <= $result->num_rows; $i++)
 						{
 							$row = $result->fetch_assoc();
-						echo "<div class='game1'><div class='gameid'>Game ".$i."</div><button type='button' class='joinbtn'>JOIN</button><div class='creator'>Erstellt von ".$row["red"]."</div></div>";
+							echo "<div class='game1'><div class='gameid'>Game ".$i."</div><button type='button' class='joinbtn'>JOIN</button><div class='creator'>Erstellt von ".$row["red"]."</div></div>";
 						}
 					}
 				?>				
