@@ -14,16 +14,9 @@ body {
 }
 
 .logo {
-	color: #1f2228;
-	float: left;
-	width: 15%;
-	height: 20px;
-	font-weight: 200;
-	font-size: 45px;
-	font-style: italic;
-	margin-top: 10px;
-	margin-left: 2%;
-}
+	max-height: inherit;
+	padding-left: 5px;
+  }
 
 .homebtn {
 	background-color: #FFFFFF;
@@ -45,27 +38,13 @@ body {
 	color: white;
 }
 
-.sbtn {
-	background-color: #FFFFFF;
-	color: #1f2228;
-	font-weight: 700;
-	border: 3px solid #1f2228;
-	border-radius: 20px;
-	width: 8%;
-	height: 40px;
-	margin-left: 5%;
-	margin-top: 15px;
-	float: right;
-	cursor: pointer;
-}
-
 .sbtn:hover {
 	border: 3px solid #2E64FE;
 	background-color: #2E64FE;
 	color: white;
 }
 
-.logoutbtn {
+.logoutbtn, .sbtn {
 	background-color: #FFFFFF;
 	color: #1f2228;
 	font-weight: 700;
@@ -73,7 +52,6 @@ body {
 	border-radius: 20px;
 	width: 8%;
 	height: 40px;
-	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 15px;
 	float: right;
@@ -178,4 +156,15 @@ body {
 	float: left;
 	border: none;
 	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
