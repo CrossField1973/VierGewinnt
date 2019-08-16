@@ -105,7 +105,7 @@
 						for($i = 1; $i <= $result->num_rows; $i++)
 						{
 							$row = $result->fetch_assoc();
-							if($row["yellow"] != "")
+							if($row["yellow"] == "")
 							{
 								echo "<div class='game1'><div class='gameid'>Game ".$i."</div><button type='button' class='joinbtn'>JOIN</button><div class='creator'>Erstellt von ".$row["red"]."</div></div>";
 							}
