@@ -12,7 +12,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    //Check, if player is in instance
+    //Check, if player is in only one instance
     $sql = "SELECT state_of_game, turn, red, yellow FROM games WHERE red = '".$_SERVER['REMOTE_ADDR']."' OR yellow = '".$_SERVER['REMOTE_ADDR']."'";
     $result = $conn->query($sql);
 
@@ -58,7 +58,7 @@
 
 	    if($c % 7 == 3)
 	    {
-		    $c += 6;
+		    $c += 4;
 	    }
     }
 
@@ -78,7 +78,7 @@
 
     	if($c % 7 == 3)
 	    {
-		    $c += 6;
+		    $c += 4;
 	    }
     }
 
@@ -98,7 +98,7 @@
 
 	    if($c % 7 == 3)
 	    {
-		    $c += 6;
+		    $c += 4;
 	    }
     }    
 ?>
@@ -106,9 +106,34 @@
 <html>
     <head>
         <title>Vier-Gewinnt</title>
+        <link rel="stylesheet" href="../CSS/game.css">
         <script src="../JS/game.js"></script>
     </head>
-    <body>
+    <body style="background-image: url(../IMG/logscreen.jpeg); background-repeat: norepeat">
+
+        <!--Navigation Bar-->
+        <ul class="dashboard">
+			<li class="logo" style="display: inline">
+                <a href="http://192.168.92.106/VierGewinnt-Login/PHP/lobby.php">
+                    <img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
+                </a>
+            </li>
+			<li style="display: inline">
+                <a href="../HTML/login.html">
+                    <button type="button" class="logoutbtn" onclick="logout()">
+                        Logout
+                    </button>
+                </a>
+            </li>
+			<li style="display: inline">
+                <a href="../PHP/settings.php">
+                    <button type="button" class="sbtn">
+                        Settings
+                    </button>
+                </a>
+            </li>
+        </ul>
+
         <div id="web-page" style="display: inline-grid; grid-template-columns: 1fr 1fr">
             <div id="game_area" style="display: inline-grid; grid-template-columns: auto auto auto auto auto auto auto">  
                 <?php
@@ -117,7 +142,7 @@
                     {
                         for($j = 0; $j < 7; $j++)
                         {   
-                            echo "<div id= '$i.$j'><img src= '";
+                            echo "<div id= '$j/$i'><img src= '";
                             if($row["state_of_game"][$i * 7 + $j] == 0)
                             {
                                 echo "../IMG/panel.png'";
@@ -150,7 +175,6 @@
                     }
                 ?>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <input type="button" value="Return to Lobby" onclick="location.href = 'http://www.google.com'">
                 <input type="button" value="Update Page" onclick="javascript:update_page()">
             </div>
         </div>
@@ -190,15 +214,15 @@
                     
                     if($i < 0)
                     {
-                        echo "<script type='text/javascript'>alert('Turn is not possible\nplease choose a possible turn.');</script>";
+                        echo "<h1>ungültiger zug</h1>";
                     }
                 }
             }
-
-            //Update
-            //Check, if database was updated
-            //while()
         ?>
+
+        <script type="text/javascript">
+            //setInterval(update_page(), 3000);
+        </script>
     </body>
 
     
