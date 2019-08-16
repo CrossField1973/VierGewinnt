@@ -71,13 +71,14 @@
 					</button>
 				</a>
 			</li>
-			<li style="display: inline">
-				<a href="game.php">
-					<button type="button" class="logoutbtn">
-						Continue Game
-					</button>
-				</a>
-			</li>
+			<?php
+				$sql = "SELECT red FROM games WHERE red = '".$_SERVER['REMOTE_ADDR']."' OR yellow = '".$_SERVER['REMOTE_ADDR']."'";
+				$result = $my_db->query($sql);
+				if($result->num_rows != 0)
+				{
+					echo "<li style='display: inline'><a href='game.php'><button type='button' class='logoutbtn'>Continue Game</button></a></li>";
+				}
+			?>
 		</ul>
 	
 		<!--Main Area-->
