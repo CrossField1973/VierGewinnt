@@ -46,13 +46,6 @@
   $result = mysqli_query($my_db, $READ);
   
   $row = $result->fetch_assoc();
-  
-
-}
-
-
-
-
 ?>
 
 
