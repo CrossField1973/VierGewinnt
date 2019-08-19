@@ -21,11 +21,11 @@ Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
 
 ## To Change
 Alle Seiten 
--In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (Kevin)
--Navigationsleiste evtl. Farbschema ändern (Kevin)
+-In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe)
+-Navigationsleiste evtl. Farbschema ändern (MMIT-kewe)
 
 Game, Settings, Lobby
--Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (Kevin)
+-Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (MMIT-kewe)
 -Überprüfen, ob der Cookie nicht älter als 48h ist, ansonsten Weiterleitung zu login.html mit Fehlermeldung (Jannik)
 
 Settings
@@ -37,16 +37,16 @@ Settings
 
 Game
 	-Sieg Erkennung bei Diagonalen Siegen (Kevin)
-	~~-Spielfeld regelmäßig mit AJAX updaten (Update-Button entfernen) (Kevin)
-	-relative URIs benutzen (Kevin)
-	-Spiel nach Sieg in der Datenbank löschen (Kevin)
-	-Securitytoken statt IP nutzen (Kevin)~~
+	~~-Spielfeld regelmäßig mit AJAX updaten (Update-Button entfernen) (MMIT-kewe)
+	-relative URIs benutzen (MMIT-kewe)
+	-Spiel nach Sieg in der Datenbank löschen (MMIT-kewe)
+	-Securitytoken statt IP nutzen (MMIT-kewe)~~
 
 Lobby
 	- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP
 -Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (Jan)
 -Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“]
--Spiel beitreten Funktionalität hinzufügen (Kevin)
+-Spiel beitreten Funktionalität hinzufügen (MMIT-kewe)
 -evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP)
 -evtl. Spielnummerierung überarbeiten
 
@@ -62,5 +62,5 @@ Registrierung
 -Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik)
 
 Login
--Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)
+~~-Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)
 
