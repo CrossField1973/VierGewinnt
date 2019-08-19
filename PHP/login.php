@@ -2,7 +2,7 @@
 $sqlhost = "localhost";
 $sqluser = "root";
 $sqlpass = "";
-$dbname  = "user_table";
+$dbname  = "viegewinnt";
 
 $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die("DB-system nicht verfuegbar");
 
