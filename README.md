@@ -21,11 +21,11 @@ Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
 
 ## Bugs
 
-Wenn auf eine Popup-Message das mit dem header folgt, wird man direkt weitergeleitet ohne Fehlermeldung. Beispiel: Wenn man beim login ein falsches Passwort eingibt, sollte ein Popup erscheinen: <br>
+Wenn auf eine Popup-Message das mit dem header folgt (siehe unten), wird man direkt weitergeleitet ohne Fehlermeldung. Beispiel: Wenn man beim login ein falsches Passwort eingibt, sollte ein Popup erscheinen: <br><br>
 	$message = "Wrong Email or Password"; <br>
      	echo "<script type='text/javascript'>alert('$message');</script>"; <br>
-      	header("Location: ../HTML/login.html"); <br>
-Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet <br>
+      	header("Location: ../HTML/login.html"); <br><br>
+Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet. <br>
 
 ## To Change
 Alle Seiten <br>
