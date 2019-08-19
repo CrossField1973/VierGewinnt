@@ -1,4 +1,6 @@
 <?php
+require "db_connection";
+
 $email = filter_input(INPUT_POST, 'email');
 $pw = filter_input(INPUT_POST, 'pw');
 $nickname = filter_input(INPUT_POST, 'nickname');
@@ -25,13 +27,6 @@ function random_string() {
  }
 
 
-    $sqlhost = "localhost";
-    $sqluser = "root";
-    $sqlpass = "";
-    $dbname  = "viergewinnt";
-
-    $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
-
     if (mysqli_connect_error()) {
         die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
@@ -41,7 +36,7 @@ function random_string() {
         $securitytoken = random_string();
         $identifier = random_string();
 
-        $stmt = $my_db->prepare($SELECT);
+        $stmt = $conn->prepare($SELECT);
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $stmt->bind_result($email);
@@ -51,7 +46,7 @@ function random_string() {
         if ($rnum==0) {
             $stmt->close();
 
-            if ($stmt = $my_db->prepare($INSERT)){
+            if ($stmt = $conn->prepare($INSERT)){
             $stmt->bind_param('sssssisss', $name, $fname, $nickname, $email, $pwhash, $age, $gender, $identifier, $securitytoken);
             $stmt->execute();
             echo "New record inserted successfully";
@@ -60,7 +55,6 @@ function random_string() {
             setcookie("token", $securitytoken, time() + (86400 * 30), "/");
 
             $stmt->close();
-            $my_db->close();
             } else {
                 echo "FAIL";
             }
