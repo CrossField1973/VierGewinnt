@@ -33,8 +33,8 @@ Alle Seiten <br>
 -Navigationsleiste evtl. Farbschema ändern (MMIT-kewe) <br>
 
 Game, Settings, Lobby <br>
--Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (MMIT-kewe) <br>
--Überprüfen, ob der Cookie nicht älter als 48h ist, ansonsten Weiterleitung zu login.html mit Fehlermeldung (Jannik) <br>
+~~-Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (MMIT-kewe) <br>
+-Überprüfen, ob der Cookie nicht älter als 48h ist, ansonsten Weiterleitung zu login.html mit Fehlermeldung (Jannik) <br>~~
 
 Settings <br>
 -Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht (Dorian) <br>
@@ -51,12 +51,12 @@ Game <br>
 	-Securitytoken statt IP nutzen (MMIT-kewe)~~ <br>
 
 Lobby <br>
-	- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP <br>
+	~~- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP <br>~~
 -Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (janm1) <br>
--Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“] <br>
--Spiel beitreten Funktionalität hinzufügen (MMIT-kewe) <br>
--evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP) <br>
--evtl. Spielnummerierung überarbeiten <br>
+~~-Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“] <br>~~
+~~-Spiel beitreten Funktionalität hinzufügen (MMIT-kewe) <br>~~
+~~-evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP) <br>~~
+~~-evtl. Spielnummerierung überarbeiten <br>~~
 
 Registrierung
 - „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird (Jan) <br>
