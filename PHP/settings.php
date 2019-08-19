@@ -1,49 +1,9 @@
 <?php  
-  if(isset($_COOKIE["token"]))
-  {
-    $token = $_COOKIE["token"];
-  }
-
-  $sqlhost = "localhost";
-	$sqluser = "root";
-	$sqlpass = "";
-	$dbname  = "viergewinnt";
-
-	$my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
-
-	if (mysqli_connect_error()) {
-		die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
-	}
-
-	//Check, if user is logged in
-	$sql = "SELECT securitytoken FROM user_table";
-	$result = $my_db->query($sql);
-	$is_logged_in = false;
-
-	if($result->num_rows > 0)
-	{
-		if(isset($_COOKIE["token"]))
-		{
-			for($i = 0; $i < $result->num_rows; $i++)
-			{
-				$row = $result->fetch_assoc();
-				if($row["securitytoken"] == $_COOKIE["token"])
-				{
-					$is_logged_in = true;
-					$token = $_COOKIE["token"];
-				}
-			}
-		}
-	}
-
-	if($is_logged_in == false)
-	{
-		header("Location: http://example.com/error.php");
-    die();
-	}
+  require "db_connection.php";
+  require "check_logged_in.php"
 
   $READ = "SELECT * FROM user_table WHERE securitytoken='".$token."'";
-  $result = mysqli_query($my_db, $READ);
+  $result = mysqli_query($conn, $READ);
   
   $row = $result->fetch_assoc();
 ?>
@@ -61,7 +21,7 @@
   	<!--Navigation Bar-->
     <ul class="dashboard">
 			<li class="logo" style="display: inline">
-        <a href="http://192.168.92.106/VierGewinnt-Login/PHP/lobby.php">
+        <a href="lobby.php">
           <img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
         </a>
       </li>
