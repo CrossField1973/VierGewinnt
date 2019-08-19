@@ -1,6 +1,6 @@
 <?php  
   require "db_connection.php";
-  require "check_logged_in.php"
+  require "check_logged_in.php";
 
   $READ = "SELECT * FROM user_table WHERE securitytoken='".$token."'";
   $result = mysqli_query($conn, $READ);
