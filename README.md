@@ -21,6 +21,12 @@ Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
 
 ## Bugs
 
+Wenn auf eine Popup-Message das mit dem header folgt, wird man direkt weitergeleitet ohne Fehlermeldung. Beispiel: Wenn man beim login ein falsches Passwort eingibt, sollte ein Popup erscheinen:
+	$message = "Wrong Email or Password";
+     	echo "<script type='text/javascript'>alert('$message');</script>";
+      	header("Location: ../HTML/login.html");
+Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet
+
 ## To Change
 Alle Seiten <br>
 -In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
