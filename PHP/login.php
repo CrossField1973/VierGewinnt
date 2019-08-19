@@ -1,16 +1,11 @@
 <?php
-$sqlhost = "localhost";
-$sqluser = "root";
-$sqlpass = "";
-$dbname  = "viegewinnt";
-
-$my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die("DB-system nicht verfuegbar");
+require "db_connection";
 
 if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
   
-  $safe_email = mysqli_real_escape_string($my_db, $_GET['email']);
+  $safe_email = mysqli_real_escape_string($conn, $_GET['email']);
   $sql = "SELECT * FROM user_table WHERE email = '" . $safe_email . "';";
-  $res = mysqli_query($my_db, $sql) or die(mysqli_error($my_db));
+  $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
   
   if ($dbdata = mysqli_fetch_assoc($res)) {
   
@@ -18,7 +13,7 @@ if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
       
       
           $READ = "SELECT securitytoken FROM user_table WHERE email='".$safe_email."'";
-          $result = mysqli_query($my_db, $READ);
+          $result = mysqli_query($conn, $READ);
           
           $row = $result->fetch_assoc();
           $token = $row['securitytoken'];
