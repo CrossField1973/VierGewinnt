@@ -19,6 +19,8 @@ Ziel 1.0
 
 Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
 
+## Bugs
+
 ## To Change
 Alle Seiten <br>
 -In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
