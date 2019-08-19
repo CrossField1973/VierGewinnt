@@ -62,5 +62,5 @@ Registrierung
 -Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik)
 
 Login
-~~-Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)
+~~-Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)~~
 
