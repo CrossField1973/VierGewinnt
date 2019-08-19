@@ -17,7 +17,8 @@ Ziel 1.0
 
 ## Changes
 
-Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
+- Die Datenbank heißt nun überall "viergewinnt"
+- Zur Tabelle user_table wurden zwei Spalten hinzugefügt
 
 ## Bugs
 
