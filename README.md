@@ -36,7 +36,7 @@ Settings
 	-evtl. Spielhistorie (z.B. Siege: 5 Niederlagen: 3)
 
 Game
-	-Sieg Erkennung bei Diagonalen Siegen (Kevin)
+	-Sieg Erkennung bei Diagonalen Siegen (MMIT kewe)
 	~~-Spielfeld regelmäßig mit AJAX updaten (Update-Button entfernen) (MMIT-kewe)
 	-relative URIs benutzen (MMIT-kewe)
 	-Spiel nach Sieg in der Datenbank löschen (MMIT-kewe)
@@ -44,7 +44,7 @@ Game
 
 Lobby
 	- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP
--Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (Jan)
+-Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (janm1)
 -Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“]
 -Spiel beitreten Funktionalität hinzufügen (MMIT-kewe)
 -evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP)
@@ -52,13 +52,13 @@ Lobby
 
 Registrierung
 - „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird (Jan)
--Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] (Jan)
+-Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] (janm1)
 	4 Sollten genügen
 		- „Bitte füllen sie das Nickname feld aus“
 		- „Bitte füllen sie das email feld aus“
 		- „Die Passwörter stimmen nicht überein“
 		- „Um auf diese Seite zugreifen zu können, müssen sie eingeloggt sein“
--Securitytoken unique machen (Jan)
+-Securitytoken unique machen (janm1)
 -Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik)
 
 Login
