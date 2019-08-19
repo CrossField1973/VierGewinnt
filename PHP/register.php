@@ -28,7 +28,7 @@ function random_string() {
     $sqlhost = "localhost";
     $sqluser = "root";
     $sqlpass = "";
-    $dbname  = "user_table";
+    $dbname  = "viergewinnt";
 
     $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
 
