@@ -1,45 +1,6 @@
 <?php
-	if(isset($_COOKIE["token"]))
-	{
-	  $token = $_COOKIE["token"];
-	}
-
-	$sqlhost = "localhost";
-	$sqluser = "root";
-	$sqlpass = "";
-	$dbname  = "viergewinnt";
-
-	$my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
-
-	if (mysqli_connect_error()) {
-		die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
-	}
-
-	//Check, if user is logged in
-	$sql = "SELECT securitytoken FROM user_table";
-	$result = $my_db->query($sql);
-	$is_logged_in = false;
-
-	if($result->num_rows > 0)
-	{
-		if(isset($_COOKIE["token"]))
-		{
-			for($i = 0; $i < $result->num_rows; $i++)
-			{
-				$row = $result->fetch_assoc();
-				if($row["securitytoken"] == $_COOKIE["token"])
-				{
-					$is_logged_in = true;
-				}
-			}
-		}
-	}
-
-	if($is_logged_in == false)
-	{
-		header("Location: http://example.com/error.php");
-        die();
-	}
+	require "db_connection.php";
+	require "check_logged_in.php";
 ?>
 
 <html>
@@ -53,7 +14,7 @@
 		<!--Navigation Bar-->
 		<ul class="dashboard">
 			<li class="logo" style="display: inline">
-				<a href="http://192.168.92.106/VierGewinnt-Login/PHP/lobby.php">
+				<a href="lobby.php">
 					<img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
 				</a>
 			</li>
@@ -65,15 +26,15 @@
 				</a>
 			</li>
 			<li style="display: inline">
-				<a href="../PHP/settings.php">
+				<a href="settings.php">
 					<button type="button" class="sbtn">
 						Settings
 					</button>
 				</a>
 			</li>
 			<?php
-				$sql = "SELECT red FROM games WHERE red = '".$_SERVER['REMOTE_ADDR']."' OR yellow = '".$_SERVER['REMOTE_ADDR']."'";
-				$result = $my_db->query($sql);
+				$sql = "SELECT player1 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
+				$result = $conn->query($sql);
 				if($result->num_rows != 0)
 				{
 					echo "<li style='display: inline'><a href='game.php'><button type='button' class='logoutbtn'>Continue Game</button></a></li>";
@@ -89,26 +50,34 @@
 
 				<?php
 					$READ = "SELECT nickname FROM user_table WHERE securitytoken='".$token."'";
-					$result = mysqli_query($my_db, $READ);
+					$result = mysqli_query($conn, $READ);
 					$row = $result->fetch_assoc();
 					echo $row['nickname'];
 				?>
 			</div>
 
 			<div>
+
 				<!--List of joinable Games-->
 				<?php
-					$sql = "SELECT red FROM games";
-					$result = $my_db->query($sql);
+					$sql = "SELECT player1, player2, id FROM games";
+					$result = $conn->query($sql);
 				
+					$j = 1;
+
 					if ($result->num_rows > 0) 
 					{
 						for($i = 1; $i <= $result->num_rows; $i++)
 						{
 							$row = $result->fetch_assoc();
-							if($row["yellow"] == "")
+							if($row["player2"] == "" && $row["player1"] != $token)
 							{
-								echo "<div class='game1'><div class='gameid'>Game ".$i."</div><button type='button' class='joinbtn'>JOIN</button><div class='creator'>Erstellt von ".$row["red"]."</div></div>";
+								$sql = "SELECT nickname FROM user_table WHERE securitytoken = '".$row['player1']."'";
+								$result2 = $conn->query($sql);
+								$row2 = $result2->fetch_assoc();
+
+								echo "<div class='game1'><div class='gameid'>Game ".$j."</div><button type='button' class='joinbtn' onclick='javascript:join_game(".$row['id'].")'>JOIN</button><div class='creator'>Erstellt von ".$row2['nickname']."</div></div>";
+								$j++;
 							}
 						}
 					}
@@ -116,33 +85,12 @@
 
 				<!--Open new Game Button-->
 				<div class="gameadd" id="add">	
-					<button type="button" class="addbtn"><a href="lobby.php?add=true">+</a></button>			
-					<!--<button type="button" class="addbtn" onclick="addAChild()">+</button>-->
+					<button type="button" class="addbtn" onclick="create_new_game()">+</button>			
 				</div>
 			</div>
+
+			<div id="error_messages">
+			</div>
 		</div>
-
-		<!--Functionality of the Add Button-->
-		<?php
-			if(isset($_GET["add"]))
-			{
-				//Check if user has an open game
-				$sql = "SELECT red FROM games WHERE red = '".$_SERVER['REMOTE_ADDR']."' OR yellow = '".$_SERVER['REMOTE_ADDR']."'";
-				$result = $my_db->query($sql);
-
-				if ($result->num_rows == 1) 
-				{
-					echo "You are already part of a game_session";
-				} 
-
-				else if($result->num_rows == 0)
-				{
-					echo "here";
-					$sql = "INSERT INTO games (red, turn, state_of_game) VALUES ('".$_SERVER['REMOTE_ADDR']."', '".$_SERVER['REMOTE_ADDR']."', '000000000000000000000000000000000000000000')";
-					$my_db->query($sql);
-					header('Location: '.$_SERVER['REQUEST_URI']);
-				}
-			}
-		?>
 	</body>
 </html>
