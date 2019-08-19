@@ -20,47 +20,47 @@ Ziel 1.0
 Zur Tabelle user_table wurden zwei Spalten hinzugefügt - bitte updaten
 
 ## To Change
-Alle Seiten 
--In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe)
--Navigationsleiste evtl. Farbschema ändern (MMIT-kewe)
+Alle Seiten <br>
+-In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
+-Navigationsleiste evtl. Farbschema ändern (MMIT-kewe) <br>
 
-Game, Settings, Lobby
--Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (MMIT-kewe)
--Überprüfen, ob der Cookie nicht älter als 48h ist, ansonsten Weiterleitung zu login.html mit Fehlermeldung (Jannik)
+Game, Settings, Lobby <br>
+-Bei den Weiterleitungen zu der Error Page die Adresse zu login.html ändern und eine Fehlermeldung anzeigen (MMIT-kewe) <br>
+-Überprüfen, ob der Cookie nicht älter als 48h ist, ansonsten Weiterleitung zu login.html mit Fehlermeldung (Jannik) <br>
 
-Settings
--Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht (Dorian)
-	-Passwort-Feld entfernen (Dorian)
-	-Bild hinzufügen bzw. ändern Funktion hinzufügen (Dorian)
-	-evtl. Farbe von spieler1 und spieler2 in Settings wählbar machen
-	-evtl. Spielhistorie (z.B. Siege: 5 Niederlagen: 3)
+Settings <br>
+-Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht (Dorian) <br>
+	-Passwort-Feld entfernen (Dorian) <br>
+	-Bild hinzufügen bzw. ändern Funktion hinzufügen (Dorian) <br>
+	-evtl. Farbe von spieler1 und spieler2 in Settings wählbar machen <br>
+	-evtl. Spielhistorie (z.B. Siege: 5 Niederlagen: 3) <br>
 
-Game
-	-Sieg Erkennung bei Diagonalen Siegen (MMIT kewe)
-	~~-Spielfeld regelmäßig mit AJAX updaten (Update-Button entfernen) (MMIT-kewe)
-	-relative URIs benutzen (MMIT-kewe)
-	-Spiel nach Sieg in der Datenbank löschen (MMIT-kewe)
-	-Securitytoken statt IP nutzen (MMIT-kewe)~~
+Game <br>
+	-Sieg Erkennung bei Diagonalen Siegen (MMIT kewe) <br>
+	~~-Spielfeld regelmäßig mit AJAX updaten (Update-Button entfernen) (MMIT-kewe) <br>
+	-relative URIs benutzen (MMIT-kewe) <br>
+	-Spiel nach Sieg in der Datenbank löschen (MMIT-kewe) <br>
+	-Securitytoken statt IP nutzen (MMIT-kewe)~~ <br>
 
-Lobby
-	- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP
--Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (janm1)
--Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“]
--Spiel beitreten Funktionalität hinzufügen (MMIT-kewe)
--evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP)
--evtl. Spielnummerierung überarbeiten
+Lobby <br>
+	- evtl. Spiel erstellen mit AJAX ersetzen anstatt mit PHP <br>
+-Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (janm1) <br>
+-Nickname statt IP bei „Erstellt von“ nutzen (Jannik) [„SELECT nickname FROM user_table WHERE securititoken = $_COOKIE[„token“]“] <br>
+-Spiel beitreten Funktionalität hinzufügen (MMIT-kewe) <br>
+-evtl. offene Spiele anzeigen im Code mit AJAX ersetzen (derzeit PHP) <br>
+-evtl. Spielnummerierung überarbeiten <br>
 
 Registrierung
-- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird (Jan)
--Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] (janm1)
-	4 Sollten genügen
-		- „Bitte füllen sie das Nickname feld aus“
-		- „Bitte füllen sie das email feld aus“
-		- „Die Passwörter stimmen nicht überein“
-		- „Um auf diese Seite zugreifen zu können, müssen sie eingeloggt sein“
--Securitytoken unique machen (janm1)
--Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik)
+- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird (Jan) <br>
+-Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] (janm1) <br>
+	4 Sollten genügen <br>
+		- „Bitte füllen sie das Nickname feld aus“ <br>
+		- „Bitte füllen sie das email feld aus“ <br>
+		- „Die Passwörter stimmen nicht überein“ <br>
+		- „Um auf diese Seite zugreifen zu können, müssen sie eingeloggt sein“ <br>
+-Securitytoken unique machen (janm1) <br>
+-Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik) <br>
 
-Login
-~~-Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)~~
+Login <br>
+~~-Zeitstempel zum Cookie hinzufügen (z.B. „token=random-number; creation-time: 16.08.2019;“) (Jannik)~~ <br>
 
