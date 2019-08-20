@@ -1,44 +1,42 @@
-<?php
-require "db_connection.php";
+<html>
+    <head>
+        <title>Viergewinnt Login</title>
+        <link rel="stylesheet" href="../CSS/login.css">
+        </head>
+        <body>
+            <form method="GET" action="login_form_handle.php">
+            <div class="login-box">
+                <?php
+                    $error = 0;
+                    if(isset($_GET["error"]))
+                    {
+                        $error = $_GET["error"];
+                    } 
 
-if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
-  
-  $safe_email = mysqli_real_escape_string($conn, $_GET['email']);
-  $sql = "SELECT * FROM user_table WHERE email = '" . $safe_email . "';";
-  $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-  
-  if ($dbdata = mysqli_fetch_assoc($res)) {
-  
-    if (password_verify($_GET['pw'], $dbdata['password'])) {
-      
-      
-          $READ = "SELECT securitytoken FROM user_table WHERE email='".$safe_email."'";
-          $result = mysqli_query($conn, $READ);
-          
-          $row = $result->fetch_assoc();
-          $token = $row['securitytoken'];
-        
-          setcookie("token", $token, time() + (86400 * 30), "/");
+                    if($error == "1")
+                    {
+                        echo "<p>Wrong E-Mail or Password</p>";
+                    }
 
-          $message = "Signed In";
-          echo "<script type='text/javascript'>alert('$message');</script>";
-          header("Location: ../PHP/lobby.php");
-
-        } else {
-
-          $message = "Wrong Email or Password";
-          echo "<script type='text/javascript'>alert('$message');</script>";
-          header("Location: ../HTML/login.html");
-
-        }
-
-    } else{
-      
-      $message = "Wrong Email or Password";
-      echo "<script type='text/javascript'>alert('$message');</script>";
-      header("Location: ../HTML/login.html");
-    
-    }
-  }
-
-?>
+                    else if($error == "3")
+                    {
+                        echo "<p>To use this service you must be logged in</p>";
+                    }
+                ?>
+                <h1>Login</h1>
+                <div class="textbox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="email" placeholder="Email" name="email" value="">
+                </div>
+                <div class="textbox">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Password" name="pw" value="">
+                </div>
+                <input class="btn" type="submit" name="" value="Sign in">
+            </form> 
+                <a href="register.html">
+                    <input class="btn" type="button" name="" value="Register" >
+                </a>
+            </div>
+        </body>
+</html>
