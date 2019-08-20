@@ -1,5 +1,5 @@
 <?php
-require "db_connection";
+require "db_connection.php";
 
 if ((isset($_GET['email'])) && (isset($_GET['pw']))) {
   
