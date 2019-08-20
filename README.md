@@ -31,7 +31,7 @@ Beim Versuch einen Benutzer mit einer vorhandenen E-Mail zu erstellen, wird man 
       	header("Location: ../HTML/login.html"); <br><br>
 Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet. <br>~~
 
-## To Erledigen
+## Zu Erledigen
 Alle Seiten <br>
 -In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
 -Navigationsleiste evtl. Farbschema ändern (MMIT-kewe) <br>
