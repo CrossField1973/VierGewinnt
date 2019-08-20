@@ -28,6 +28,8 @@ Wenn auf eine Popup-Message das mit dem header folgt (siehe unten), wird man dir
       	header("Location: ../HTML/login.html"); <br><br>
 Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet. <br>
 
+Beim Versuch einen Benutzer mit einer vorhandenen E-Mail zu erstellen, wird man nach der Fehlermeldung nicht wieder zur Registrierungsseite zurückgeleitet<br>
+
 ## To Change
 Alle Seiten <br>
 -In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
