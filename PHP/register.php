@@ -1,5 +1,5 @@
 <?php
-require "db_connection";
+require "db_connection.php";
 
 $email = filter_input(INPUT_POST, 'email');
 $pw = filter_input(INPUT_POST, 'pw');
