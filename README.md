@@ -33,7 +33,7 @@ Man wird allerdings direkt wieder auf die Login-Seite weitergeleitet. <br>
 
 ## Zu Erledigen
 Alle Seiten <br>
--In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen (MMIT-kewe) <br>
+-In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen <b>(MMIT-kewe)</b> <br>
 
 Settings <br>
 -Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht <b>(Dorian)</b> <br>
@@ -46,15 +46,15 @@ Game <br>
 	-Sieg Erkennung bei Diagonalen Siegen <b>(MMIT kewe)</b> <br>
 
 Lobby <br>
--Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern (Jannik) <br>
+-Fehlermeldung beim Versuch ein neues Spiel zu erstellen, wenn noch ein Spiel offen ist verschönern <b>(Jannik)</b> <br>
 
 Registrierung
-- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird (janm1) <br>
--Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] (janm1) <br>
+- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird <b>(janm1)</b> <br>
+-Bei unvollständig ausgefüllten Dokument (z.B. Passwort vergessen) passende Fehlermeldung ausgeben [am besten mit …/login?error= z.B. 5 damit man Fehlermeldungen angeben kann, wenn man zur Login Seite weiterleitet] <b>(janm1)</b> <br>
 	4 Sollten genügen <br>
 		- „Bitte füllen sie das Nickname feld aus“ <br>
 		- „Bitte füllen sie das email feld aus“ <br>
 		- „Die Passwörter stimmen nicht überein“ <br>
 		- „Um auf diese Seite zugreifen zu können, müssen sie eingeloggt sein“ <br>
--Securitytoken unique machen (janm1) <br>
--Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild (Jannik) <br>
+-Securitytoken unique machen <b>(janm1)</b> <br>
+-Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild <b>(Jannik)</b> <br>
