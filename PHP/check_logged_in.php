@@ -8,7 +8,7 @@
 
     else
     {
-        header("Location: http://example.com/error.php");
+        header("Location: login.php?error=3");
         die();
     }
 
@@ -30,7 +30,7 @@
 
     if($is_logged_in == false)
     {
-        header("Location: http://example.com/error.php");
+        header("Location: login.php?error=3");
         die();
     }
 ?>
