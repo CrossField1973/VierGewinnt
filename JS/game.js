@@ -122,8 +122,21 @@ function color_select(color, player)
         colors[i].setAttribute("style", "max-width: 10%; max-height: 10%;"); 
     }
     
-    document.getElementById((color + player).trim()).style.borderStyle = "solid";
-    document.getElementById((color + player).trim()).style.borderWidth = "2px";
-    document.getElementById((color + player).trim()).style.borderColor = "#FF0000";
+    document.getElementById(color + player.trim()).style.borderStyle = "solid";
+    document.getElementById(color + player.trim()).style.borderWidth = "2px";
+    document.getElementById(color + player.trim()).style.borderColor = "#FF0000";
     document.cookie = "color" + player + "=" + color + "; path=/";
+}
+
+function highlight_selected()
+{
+    var color_p1 = getCookie("color_p1");
+    document.getElementById(color_p1 + "_p1").style.borderStyle = "solid";
+    document.getElementById(color_p1 + "_p1").style.borderWidth = "2px";
+    document.getElementById(color_p1 + "_p1").style.borderColor = "#FF0000";
+
+    var color_p2 = getCookie("color_p2");
+    document.getElementById(color_p2 + "_p2").style.borderStyle = "solid";
+    document.getElementById(color_p2 + "_p2").style.borderWidth = "2px";
+    document.getElementById(color_p2 + "_p2").style.borderColor = "#FF0000";
 }
