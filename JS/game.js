@@ -111,3 +111,19 @@ function interval()
     load_game_area();
     check_for_winner();
 }
+
+function color_select(color, player)
+{
+    var colors = document.querySelectorAll(".color" + player.trim());
+    var i = colors.length;
+    while (i > 0) 
+    {
+        i--;  
+        colors[i].setAttribute("style", "max-width: 10%; max-height: 10%;"); 
+    }
+    
+    document.getElementById((color + player).trim()).style.borderStyle = "solid";
+    document.getElementById((color + player).trim()).style.borderWidth = "2px";
+    document.getElementById((color + player).trim()).style.borderColor = "#FF0000";
+    document.cookie = "color" + player + "=" + color + "; path=/";
+}
