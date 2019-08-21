@@ -26,7 +26,7 @@
         </a>
       </li>
 			<li style="display: inline">
-        <a href="../HTML/login.html">
+        <a href="../PHP/login.php">
           <button type="button" class="logoutbtn" onclick="logout()">
             Logout
           </button>
