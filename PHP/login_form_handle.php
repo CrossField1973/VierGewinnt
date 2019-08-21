@@ -20,8 +20,6 @@ if ((isset($_GET['email'])) && (isset($_GET['pw'])))
       $token = $row['securitytoken'];
     
       setcookie("token", $token, time() + (86400 * 30), "/");
-      setcookie("color_p1", "red", time() + (86400 * 30), "/");
-      setcookie("color_p2", "yellow", time() + (86400 * 30), "/");
 
       header("Location: lobby.php");
 

@@ -10,6 +10,9 @@
         header("Location: lobby.php");
         die();
     }
+
+    setcookie("color_p1", "red", time() + (86400 * 30), "/");
+    setcookie("color_p2", "yellow", time() + (86400 * 30), "/");
 ?>
 
 <html>
@@ -55,27 +58,27 @@
                 <div id="current_turn">
                 </div>
                 <div id="color_picker" style="display: block; padding: 50px">
-                    <div id="color_p1">
-                        <p>Color Player 1</p>
-                        <img src="../IMG/panel_black.png" style="max-width: 10%; max-height: 10%; border-width: 2px; border-style: solid; border-color: #FF0000">
-                        <img src="../IMG/panel_blue.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_brown.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_orange.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_pink.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_purple.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_red.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_yellow.png" style="max-width: 10%; max-height: 10%;">
+                    <div>
+                        <p id="text">Color Player 1</p>
+                        <img src="../IMG/panel_black.png" class="color_p1" id="black_p1" onclick="color_select('black', '_p1')">
+                        <img src="../IMG/panel_blue.png" class="color_p1" id="blue_p1" onclick="color_select('blue', '_p1')">
+                        <img src="../IMG/panel_brown.png" class="color_p1" id="brown_p1" onclick="color_select('brown', '_p1')">
+                        <img src="../IMG/panel_orange.png" class="color_p1" id="orange_p1" onclick="color_select('orange', '_p1')">
+                        <img src="../IMG/panel_pink.png" class="color_p1" id="pink_p1" onclick="color_select('pink', '_p1')">
+                        <img src="../IMG/panel_purple.png" class="color_p1" id="purple_p1" onclick="color_select('purple', '_p1')">
+                        <img src="../IMG/panel_red.png" class="color_p1" id="red_p1" onclick="color_select('red', '_p1')">
+                        <img src="../IMG/panel_yellow.png" class="color_p1" id="yellow_p1" onclick="color_select('yellow', '_p1')">
                     </div>
-                    <div id="color_p2">
+                    <div>
                         <p>Color Player 2</p>
-                        <img src="../IMG/panel_black.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_blue.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_brown.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_orange.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_pink.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_purple.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_red.png" style="max-width: 10%; max-height: 10%;">
-                        <img src="../IMG/panel_yellow.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_black.png" class="color_p2" id="black_p2" onclick="color_select('black', '_p2')">
+                        <img src="../IMG/panel_blue.png" class="color_p2" id="blue_p2" onclick="color_select('blue', '_p2')">
+                        <img src="../IMG/panel_brown.png" class="color_p2" id="brown_p2" onclick="color_select('brown', '_p2')">
+                        <img src="../IMG/panel_orange.png" class="color_p2" id="orange_p2" onclick="color_select('orange', '_p2')">
+                        <img src="../IMG/panel_pink.png" class="color_p2" id="pink_p2" onclick="color_select('pink', '_p2')">
+                        <img src="../IMG/panel_purple.png" class="color_p2" id="purple_p2" onclick="color_select('purple', '_p2')">
+                        <img src="../IMG/panel_red.png" class="color_p2" id="red_p2" onclick="color_select('red', '_p2')">
+                        <img src="../IMG/panel_yellow.png" class="color_p2" id="yellow_p2" onclick="color_select('yellow', '_p2')">
                     </div>
                 </div>
                 <p id="error_message" style="color: red"></p>
