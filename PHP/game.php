@@ -10,9 +10,6 @@
         header("Location: lobby.php");
         die();
     }
-
-    setcookie("color_p1", "red", time() + (86400 * 30), "/");
-    setcookie("color_p2", "yellow", time() + (86400 * 30), "/");
 ?>
 
 <html>
@@ -86,6 +83,8 @@
         </div>
 
         <script type="text/javascript">
+            highlight_selected();
+
             load_game_area();
             check_for_winner();
             setInterval(interval, 1000);
