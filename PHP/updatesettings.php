@@ -1,12 +1,13 @@
 <?php
+require "db_connection.php";
+$token = $_COOKIE["token"];
+
 $email = filter_input(INPUT_POST, 'email');
-$pw = filter_input(INPUT_POST, 'pw');
 $nickname = filter_input(INPUT_POST, 'nickname');
 $fname = filter_input(INPUT_POST, 'fname');
 $name = filter_input(INPUT_POST, 'name');
 $age = filter_input(INPUT_POST, 'age');
 $gender = filter_input(INPUT_POST, 'radio');
-$pwhash = password_hash($pw, PASSWORD_DEFAULT);
 
 function random_string() {
     if(function_exists('random_bytes')) {
@@ -23,61 +24,22 @@ function random_string() {
     }   
     return $str;
  }
-
-
-    $sqlhost = "localhost";
-    $sqluser = "root";
-    $sqlpass = "";
-    $dbname  = "user_table";
-
-    $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname) or die ("DB-system nicht verfuegbar");
-
-    if (mysqli_connect_error()) {
-        die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
-    } else {
       
 
-        $token = $_COOKIE["token"];
-        $READ = "SELECT name FROM user_table WHERE securitytoken='".$token."'";
-        $result = mysqli_query($my_db, $READ);
-          
-        $row = $result->fetch_assoc();
-        $ID = $row['ID'];  
-      
-        $securitytoken = random_string();
-        $identifier = random_string();
+$token = $_COOKIE["token"];
+$READ = "SELECT name FROM user_table WHERE securitytoken='".$token."'";
+$result = mysqli_query($conn, $READ);
 
-      //"UPDATE MyGuests SET lastname='Doe' WHERE id=2"
-        $UPDATE = "UPDATE user_table SET password='".$pwhash."', name = '".$name."', first_name = '".$fname."', age = ".$age." WHERE securitytoken='".$token."'";
-        // , securitytoken = '".$securitytoken."'
-        // name, first_name, nickname, email, password, age, sex, identifier, securitytoken
-        
+$row = $result->fetch_assoc();
+$ID = $row['ID'];  
 
+$securitytoken = random_string();
+$identifier = random_string();
 
-        
-        
+$UPDATE = "UPDATE user_table SET, name = '".$name."', first_name = '".$fname."', age = ".$age." WHERE securitytoken='".$token."'";
 
+mysqli_query($conn, $UPDATE);
 
-        mysqli_query($my_db, $UPDATE);
-
-        /*
-          if ($stmt = $my_db->prepare($UPDATE)){
-            $stmt->bind_param('sssssisss', $name, $fname, $nickname, $email, $pwhash, $age, $gender, $identifier, $securitytoken);
-            $stmt->execute();
-            echo "New record inserted successfully";
-            echo $pwhash;
-        */
-            //setcookie("token", $securitytoken, time() + (86400 * 30), "/");
-
-            //$stmt->close();
-            $my_db->close();
-          
-          //} else {
-          //      echo "FAIL";
-          //}
-            
-          header("Location: ../PHP/lobby.php");
-        
-        }
+header("Location: ../PHP/lobby.php");
 ?>  
 

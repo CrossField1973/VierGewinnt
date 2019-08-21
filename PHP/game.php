@@ -43,14 +43,42 @@
             </li>
         </ul>
 
-        <div id="web-page" style="display: inline-grid; grid-template-columns: 1fr 1fr">        
-            <!--Create Game Area-->  
+        <!--Page-->
+        <div id="web-page" style="display: inline-grid; grid-template-columns: 1fr 1fr">      
+
+            <!--Game Area-->  
             <div id='game_area' style='display: inline-grid; grid-template-columns: auto auto auto auto auto auto auto'>
             </div>
+
+            <!--User Interface-->
             <div id="game_ui" style="display: grid">
                 <div id="current_turn">
                 </div>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <div id="color_picker" style="display: block; padding: 50px">
+                    <div id="color_p1">
+                        <p>Color Player 1</p>
+                        <img src="../IMG/panel_black.png" style="max-width: 10%; max-height: 10%; border-width: 2px; border-style: solid; border-color: #FF0000">
+                        <img src="../IMG/panel_blue.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_brown.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_orange.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_pink.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_purple.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_red.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_yellow.png" style="max-width: 10%; max-height: 10%;">
+                    </div>
+                    <div id="color_p2">
+                        <p>Color Player 2</p>
+                        <img src="../IMG/panel_black.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_blue.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_brown.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_orange.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_pink.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_purple.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_red.png" style="max-width: 10%; max-height: 10%;">
+                        <img src="../IMG/panel_yellow.png" style="max-width: 10%; max-height: 10%;">
+                    </div>
+                </div>
+                <p id="error_message" style="color: red"></p>
             </div>
         </div>
 

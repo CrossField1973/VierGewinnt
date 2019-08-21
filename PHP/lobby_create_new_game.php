@@ -4,7 +4,7 @@
 
     //Check if user doesn't already have an open game
     $sql = "SELECT player1 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
-    $result = $conn->query($sql) or die($conn->connection_error);
+    $result = $conn->query($sql);
 
     if ($result->num_rows == 1) 
     {

@@ -42,10 +42,6 @@
         <input type='email' placeholder='Email' name='email' value='".$row['email']."' required readonly>
         </div>"
       ?>
-    
-      <div class="textbox">
-        <input type="password" placeholder="Password *" name="pw" value="" required>
-      </div>
       
       <?php echo  "<div class='textbox'>
         <input type='text' placeholder='Nickname' name='nickname' value=".$row['nickname']." required readonly>

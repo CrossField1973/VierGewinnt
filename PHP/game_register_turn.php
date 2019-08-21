@@ -42,7 +42,7 @@
                 
                 if($i < 0)
                 {
-                    echo "<h1>ungültiger zug</h1>";
+                    echo "Invalid turn, please choose another turn";
                 }
             }
         }
