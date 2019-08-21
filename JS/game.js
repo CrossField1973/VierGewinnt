@@ -3,6 +3,13 @@ function register_turn(index)
 {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../PHP/game_register_turn.php?turn=" + index, true);
+    xhttp.onreadystatechange = function() 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            document.getElementById("error_message").innerHTML = this.responseText;
+        }
+    };
     xhttp.send();
 }
 
@@ -46,13 +53,16 @@ function check_for_winner()
                 if(this.responseText.trim() == getCookie("token"))
                 {
                     document.getElementById("current_turn").innerHTML = "<h1>You win!</h1>";
-                    setTimeout(function() 
-                                    {
-                                        xhttp.open("GET", "../PHP/game_delete_instance.php", true);
-                                        xhttp.send();
-                                        window.location.href = "lobby.php";
-                                    }, 
-                                3000);
+                    var xhttp2 = new XMLHttpRequest();
+                    xhttp2.open("GET", "../PHP/game_delete_instance.php", true);
+                    xhttp2.onreadystatechange = function() 
+                    {
+                        if (this.readyState == 4 && this.status == 200) 
+                        {
+                            setTimeout(function() { window.location.href = "lobby.php";}, 3000);
+                        }
+                    }
+                    xhttp2.send();
                 }
 
                 else
