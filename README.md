@@ -23,7 +23,6 @@ Game, Lobby, Settings <br>
 	- In der Navigationsleiste Profilbild anzeigen <b>(MMIT-kewe)</b> <br>
 
 Settings <br>
-	- Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht <b>(Dorian)</b> <br>
 	- Bild hinzufügen bzw. ändern Funktion hinzufügen <b>(Dorian)</b> <br>
 
 Registrierung
