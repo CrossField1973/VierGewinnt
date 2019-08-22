@@ -27,9 +27,6 @@
     <li style="display: inline">
       <div class="dropdown" style="height: 100%; width: auto; float: right">
         <?php
-		$sql = "SELECT picture_filepath FROM user_table WHERE securitytoken = '".$token."'";
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
 		echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
 	?>
         <div class="dropdown-content" style="right: 0">
