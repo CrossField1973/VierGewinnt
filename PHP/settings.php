@@ -17,21 +17,26 @@
 </head>
 
 <body>
-
-  	<!--Navigation Bar-->
-    <ul class="dashboard">
-			<li class="logo" style="display: inline">
-        <a href="lobby.php">
-          <img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
-        </a>
-      </li>
-			<li style="display: inline">
-        <a href="../PHP/login.php">
-          <button type="button" class="logoutbtn" onclick="logout()">
-            Logout
-          </button>
-        </a>
-      </li>
+  <!--Navigation Bar-->
+  <ul class="dashboard">
+    <li class="logo" style="display: inline">
+      <a href="lobby.php">
+        <img src="../IMG/4gewinnt_logo.png" style="max-height: 100%; width: auto">
+      </a>
+    </li>
+    <li style="display: inline">
+      <div class="dropdown" style="height: 100%; width: auto; float: right">
+        <?php
+					$sql = "SELECT picture_filepath FROM user_table WHERE securitytoken = '".$token."'";
+					$result = $conn->query($sql);
+					$row = $result->fetch_assoc();
+					echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
+				?>
+        <div class="dropdown-content" style="right: 0">
+          <a href="login.php" onclick="logout()">Logout</a>
+        </div>
+      </div>
+    </li>
   </ul>
 
   <form action="../PHP/updatesettings.php" method="post">

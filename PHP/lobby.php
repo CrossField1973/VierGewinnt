@@ -15,29 +15,29 @@
 		<ul class="dashboard">
 			<li class="logo" style="display: inline">
 				<a href="lobby.php">
-					<img src="../IMG/4gewinnt_logo.png" style="height: 100%; width: auto">
+					<img src="../IMG/4gewinnt_logo.png" style="max-height: 100%; width: auto">
 				</a>
 			</li>
 			<li style="display: inline">
-				<a href="../PHP/login.php">
-					<button type="button" class="logoutbtn" onclick="logout()">
-						Logout
-					</button>
-				</a>
-			</li>
-			<li style="display: inline">
-				<a href="settings.php">
-					<button type="button" class="sbtn">
-						Settings
-					</button>
-				</a>
+				<div class="dropdown" style="height: 100%; width: auto; float: right">
+					<?php
+						$sql = "SELECT picture_filepath FROM user_table WHERE securitytoken = '".$token."'";
+						$result = $conn->query($sql);
+						$row = $result->fetch_assoc();
+						echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
+					?>
+					<div class="dropdown-content" style="right: 0">
+						<a href="login.php" onclick="logout()">Logout</a>
+						<a href="settings.php">Settings</a>
+					</div>
+				</div>
 			</li>
 			<?php
 				$sql = "SELECT player1 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
 				$result = $conn->query($sql);
 				if($result->num_rows != 0)
 				{
-					echo "<li style='display: inline'><a href='game.php'><button type='button' class='logoutbtn'>Continue Game</button></a></li>";
+					echo "<li class='continue_game_btn' style='display: inline'><a href='game.php' style='float:right'>Continue Game</a></li>";
 				}
 			?>
 		</ul>
