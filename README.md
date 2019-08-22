@@ -19,8 +19,8 @@ Ziel 1.0
 Beim Versuch einen Benutzer mit einer vorhandenen E-Mail zu erstellen, wird man nach der Fehlermeldung nicht wieder zur Registrierungsseite zurückgeleitet <b>(Jannik)</b> <br><br>
 
 ## Zu Erledigen
-Alle Seiten <br>
-	- In der Navigationsleiste Settings und Logout als ein Dropdown-Menü, wenn man auf den Avatar drückt anzeigen <b>(MMIT-kewe)</b> <br>
+Game, Lobby, Settings <br>
+	- In der Navigationsleiste Profilbild anzeigen <b>(MMIT-kewe)</b> <br>
 
 Settings <br>
 	- Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht <b>(Dorian)</b> <br>
