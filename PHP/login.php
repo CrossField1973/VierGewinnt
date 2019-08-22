@@ -34,7 +34,7 @@
                 </div>
                 <input class="btn" type="submit" name="" value="Sign in">
             </form> 
-                <a href="register.html">
+                <a href="../HTML/register.html">
                     <input class="btn" type="button" name="" value="Register" >
                 </a>
             </div>
