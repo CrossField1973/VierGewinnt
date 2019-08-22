@@ -37,10 +37,7 @@ Alle Seiten <br>
 
 Settings <br>
 -Im Alter Feld nichts anzeigen, wenn das Alter nicht angegeben wurde bzw. auf 0 steht <b>(Dorian)</b> <br>
--Passwort-Feld entfernen <b>(Dorian)</b> <br>
 -Bild hinzufügen bzw. ändern Funktion hinzufügen <b>(Dorian)</b> <br>
--Farbe von spieler1 und spieler2 in Settings wählbar machen <br>
--evtl. Spielhistorie (z.B. Siege: 5 Niederlagen: 3) <br>
 
 Game <br>
 	-Sieg Erkennung bei Diagonalen Siegen <b>(MMIT kewe)</b> <br>
@@ -48,4 +45,3 @@ Game <br>
 Registrierung
 - „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird <b>(Jannik)</b> <br>
 -Securitytoken unique machen <b>(Jannik)</b> <br>
--Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild <b>(Jannik)</b> <br>
