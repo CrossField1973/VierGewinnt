@@ -31,4 +31,4 @@ Game <br>
 
 Registrierung
 	- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird <b>(Jannik)</b> <br>
-	- Securitytoken unique machen <b>(Jannik)</b> <br>
+	- Securitytoken unique machen (register.php, updatesettings.php) <b>(Jannik)</b> <br> 
