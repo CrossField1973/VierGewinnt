@@ -46,6 +46,6 @@ Game <br>
 	-Sieg Erkennung bei Diagonalen Siegen <b>(MMIT kewe)</b> <br>
 
 Registrierung
-- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird <b>(janm1)</b> <br>
--Securitytoken unique machen <b>(janm1)</b> <br>
+- „Passwort wiederholen“-Feld hinzufügen und prüfen, ob die Passwörter übereinstimmen, bevor das Dokument abgeschickt wird <b>(Jannik)</b> <br>
+-Securitytoken unique machen <b>(Jannik)</b> <br>
 -Im Bild-Feld der user_table standartmäßig ein Beispielbild reinmachen, z.B. ein Anonymus-User Bild <b>(Jannik)</b> <br>
