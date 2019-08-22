@@ -27,11 +27,11 @@
     <li style="display: inline">
       <div class="dropdown" style="height: 100%; width: auto; float: right">
         <?php
-					$sql = "SELECT picture_filepath FROM user_table WHERE securitytoken = '".$token."'";
-					$result = $conn->query($sql);
-					$row = $result->fetch_assoc();
-					echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
-				?>
+		$sql = "SELECT picture_filepath FROM user_table WHERE securitytoken = '".$token."'";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
+	?>
         <div class="dropdown-content" style="right: 0">
           <a href="login.php" onclick="logout()">Logout</a>
         </div>
@@ -62,8 +62,13 @@
       ?>
       
       <?php echo  "<div class='textbox'>
-        <input type='number' placeholder='Age' name='age' value=".$row['age']." min='18' max='100'>
-      </div>"
+      	<input type='number' placeholder='Age' name='age' ";
+        if($row['age'] != 0)
+        {
+          echo "value=".$row['age'];
+        }
+        echo " min='18' max='100'>
+                  </div>";
       ?>
 
       <div>
