@@ -14,12 +14,6 @@ Projekt der Gruppe "Webengineering 1,0 Rasur" für Web Engineering.
 Ziel 1.0
 
 
-
-## Changes
-
-- Die Datenbank heißt nun überall "viergewinnt"
-- Zur Tabelle user_table wurden zwei Spalten hinzugefügt
-
 ## Bugs
 
 Beim Versuch einen Benutzer mit einer vorhandenen E-Mail zu erstellen, wird man nach der Fehlermeldung nicht wieder zur Registrierungsseite zurückgeleitet <b>(Jannik)</b> <br><br>
