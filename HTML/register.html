@@ -3,17 +3,43 @@
 <head>
   <title>Viergewinnt Register</title>
   <link rel="stylesheet" href="../CSS/register.css">
+  <script>
+
+    function Validate() {
+      confirmed = false;
+      var password = document.getElementById("pw").value;
+      var confirmPassword = document.getElementById("confirm_password").value;
+      if (password != confirmPassword) {
+        document.getElementById("check").className = "fa fa-times";
+        document.getElementById("check").style.color = "red";
+        document.getElementById("register_form").setAttribute("action", "../PHP/register.php?confirmed=" + confirmed);
+        return confirmed;
+      } else {
+        document.getElementById("check").style.color = "green";
+        document.getElementById("check").className = "fa fa-check"
+        confirmed = true;
+        document.getElementById("register_form").setAttribute("action", "../PHP/register.php?confirmed=" + confirmed);
+        return confirmed;
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <form action="../PHP/register.php" method="post">
+  <p id="error">LUL</p>
+  <form id="register_form" method="POST">
     <div class="register-box">
       <h1>Register</h1>
       <div class="textbox">
         <input type="email" placeholder="Email *" name="email" value="" required>
       </div>
       <div class="textbox">
-        <input type="password" placeholder="Password *" name="pw" value="" required>
+        <input type="password" placeholder="Password *" name="pw" value="" id="pw" onkeyup="Validate()" required>
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Confirm password *" name="confirm_password" value="" id="confirm_password"
+          onkeyup="Validate()" required>
+        <i class="" aria-hidden="true" id="check"></i>
       </div>
       <div class="textbox">
         <input type="text" placeholder="Nickname *" name="nickname" value="" required>
