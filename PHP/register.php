@@ -25,8 +25,6 @@ function random_string() {
     }   
     return $str;
  }
-    if($_GET['confirmed']==true){
-
     if (mysqli_connect_error()) {
         die('Connection Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
@@ -66,8 +64,5 @@ function random_string() {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-} else{
-    header("Location: ../HTML/register.html");
-}
 
 

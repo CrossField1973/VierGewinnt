@@ -55,6 +55,11 @@ body{
     margin-top: 20px;
     cursor: pointer;
 }
+.btn:disabled,
+.btn[disabled]{
+  opacity: 0.3; 
+  cursor: not-allowed;
+}
 a:link{
   text-decoration: none;
 }

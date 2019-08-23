@@ -6,28 +6,25 @@
   <script>
 
     function Validate() {
-      confirmed = false;
       var password = document.getElementById("pw").value;
       var confirmPassword = document.getElementById("confirm_password").value;
       if (password != confirmPassword) {
         document.getElementById("check").className = "fa fa-times";
         document.getElementById("check").style.color = "red";
-        document.getElementById("register_form").setAttribute("action", "../PHP/register.php?confirmed=" + confirmed);
-        return confirmed;
+        document.getElementById("submit").disabled = true;
+        return false;
       } else {
         document.getElementById("check").style.color = "green";
         document.getElementById("check").className = "fa fa-check"
-        confirmed = true;
-        document.getElementById("register_form").setAttribute("action", "../PHP/register.php?confirmed=" + confirmed);
-        return confirmed;
+        document.getElementById("submit").disabled = false;
+        return true;
       }
     }
   </script>
 </head>
 
 <body>
-  <p id="error">LUL</p>
-  <form id="register_form" method="POST">
+  <form id="register_form" action="../PHP/register.php" method="POST">
     <div class="register-box">
       <h1>Register</h1>
       <div class="textbox">
@@ -68,7 +65,7 @@
           <span class="checkmark"></span>
         </label>
       </div>
-      <input class="btn" type="submit" name="submit" value="Register">
+      <input class="btn" id="submit" type="submit" name="submit" value="Register">
   </form>
   <a href="login.html">
     <input class="btn" type="button" name="" value="Back">
