@@ -37,8 +37,8 @@
 						echo "<img src='".$row["picture_filepath"]."' class='dropbtn' style='max-height: 100%; width: auto;'>";
 					?>
 					<div class="dropdown-content" style="right: 0">
-						<a href="login.php" onclick="logout()">Logout</a>
 						<a href="settings.php">Settings</a>
+						<a href="login.php" onclick="logout()">Logout</a>						
 					</div>
 				</div>
 			</li>
@@ -63,6 +63,8 @@
                     <div>
                         <p id="text">Your Color</p>
                         <?php
+			    $sql = "SELECT player1, player2 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
+    			    $result = $conn->query($sql);
                             $row = $result->fetch_assoc();
 
                             if($row["player1"] == $token)
