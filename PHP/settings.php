@@ -43,7 +43,7 @@
       <p id="error"></p>
       <?php echo "<div class='image_upload' style='position: relative; text-align: center;'>
       <img src='".$row["picture_filepath"]."' id='image_preview' style='max-height: 7vw; width: auto; display: block; margin-left: auto; margin-right: auto;'>
-      <label for='image' style='position: absolute; bottom: 8px; left: 50%; color: black'>Change image</label>
+      <label for='image' style='position: absolute; bottom: 4px; left: 50%; transform: translate(-50%, 0%); color: black'>Change image</label>
       <input type='file' name='image' id='image' hidden onchange='javascript:refresh_image()' accept=image/*'>
       </div>";
       ?>
