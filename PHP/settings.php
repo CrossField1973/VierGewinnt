@@ -78,15 +78,36 @@
 
       <div>
         <label class="container">No information
-          <input type="radio" checked="checked" name="radio" value="def">
+          <input type="radio" 
+          <?php
+            if($row['sex'] == "def")
+            {
+              echo "checked=\"checked\" ";
+            }
+          ?>
+          name="radio" value="def">
           <span class="checkmark"></span>
         </label>
         <label class="container">Male
-          <input type="radio" name="radio" value="male">
+          <input type="radio" 
+          <?php
+            if($row['sex'] == "male")
+            {
+              echo "checked=\"checked\" ";
+            }
+          ?>
+          name="radio" value="male">
           <span class="checkmark"></span>
         </label>
         <label class="container">Female
-          <input type="radio" name="radio" value="female">
+          <input type="radio" 
+          <?php
+            if($row['sex'] == "female")
+            {
+              echo "checked=\"checked\" ";
+            }
+          ?>
+          name="radio" value="female">
           <span class="checkmark"></span>
         </label>
       </div>
