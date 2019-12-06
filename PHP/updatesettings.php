@@ -116,12 +116,12 @@ if($age == "")
 //nickname email image fehlen noch
 if($uploadOk == 1)
 {
-   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age.", picture_filepath = '".$picture_filepath."' WHERE securitytoken='".$token."'";
+   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age.", sex ='".$gender."', picture_filepath = '".$picture_filepath."' WHERE securitytoken='".$token."'";
 }
 
 else
 {
-   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age." WHERE securitytoken='".$token."'";
+   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age.", sex ='".$gender."' WHERE securitytoken='".$token."'";
 }
 
 mysqli_query($conn, $UPDATE);
