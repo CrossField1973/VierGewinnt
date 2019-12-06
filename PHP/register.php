@@ -51,6 +51,8 @@ function random_string() {
             echo $pwhash;
 
             setcookie("token", $securitytoken, time() + (86400 * 30), "/");
+            setcookie("color_p1", "red", time() + (86400 * 30), "/");
+            setcookie("color_p2", "yellow", time() + (86400 * 30), "/");
 
             $stmt->close();
             } else {
