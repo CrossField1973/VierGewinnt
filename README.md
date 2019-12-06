@@ -7,12 +7,18 @@ Team:<br>
   dorianriepe<br>
   janm1<br>
   jannikbuehring<br>
+  
+  
+  
+#Set-Up
 
-
-
-
-
-
-
-
-Ziel 1.0
+1. Install XAMPP or any other apache distribution<br>
+2. Unzip the folder to C:\xampp\htdocs, if you're using XAMPP<br>
+3.
+  a. Start your apache and sql service
+  b. Go to localhost/phpmyadmin
+  c1. Create a Database called "viergewinnt"<br>
+  c2. Alternatively you can choose a different database name, but then you have to change<br>
+      $dbname = "<b>viergewinnt</b>" into $dbname = "<b>NAME OF YOUR DB</b>"<br>
+4. go to https://localhost/viergewinnt-login/login.php<b>
+8. Enjoy the game!!^^
