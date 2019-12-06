@@ -17,7 +17,7 @@
     <head>
         <title>Vier-Gewinnt</title>
         <link rel="stylesheet" href="../CSS/game.css">
-        <script src="../JS/game.js?v=1"></script>
+        <script src="../JS/game.js"></script>
     </head>
     <body style="background-image: url(../IMG/logscreen.jpeg); background-repeat: norepeat">
 
