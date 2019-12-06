@@ -20,5 +20,5 @@ Team:<br>
   c1. Create a Database called "viergewinnt"<br>
   c2. Alternatively you can choose a different database name, but then you have to change<br>
       $dbname = "<b>viergewinnt</b>" into $dbname = "<b>NAME OF YOUR DB</b>"<br>
-4. go to https://localhost/viergewinnt-login/login.php<b>
-8. Enjoy the game!!^^
+4. go to https://localhost/viergewinnt-login/login.php<br>
+5. Enjoy the game!!^^
