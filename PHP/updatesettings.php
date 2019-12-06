@@ -1,6 +1,7 @@
 <?php
 require "db_connection.php";
 $token = $_COOKIE["token"];
+$row = 0;
 
 //Upload new image Image
 $uploadOk = 0;
@@ -113,7 +114,15 @@ if($age == "")
 }
 
 //nickname email image fehlen noch
-$UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age.", picture_filepath = '".$picture_filepath."' WHERE securitytoken='".$token."'";
+if($uploadOk == 1)
+{
+   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age.", picture_filepath = '".$picture_filepath."' WHERE securitytoken='".$token."'";
+}
+
+else
+{
+   $UPDATE = "UPDATE user_table SET name = '".$name."', first_name = '".$fname."', age = ".$age." WHERE securitytoken='".$token."'";
+}
 
 mysqli_query($conn, $UPDATE);
 header("Location: settings.php");
