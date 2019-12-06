@@ -59,7 +59,7 @@ function check_for_winner()
                     {
                         if (this.readyState == 4 && this.status == 200) 
                         {
-                            setTimeout(function() { window.location.href = "lobby.php";}, 3000);
+                            window.location.href = "lobby.php";
                         }
                     }
                     xhttp2.send();
@@ -67,13 +67,8 @@ function check_for_winner()
 
                 else
                 {
-                    document.getElementById("current_turn").innerHTML = this.responseText.trim()
                     document.getElementById("current_turn").innerHTML = "<h1>You lose!</h1>";
-                    setTimeout(function() 
-                                    {   
-                                        window.location.href = "lobby.php";
-                                    }, 
-                                3000);
+                    window.location.href = "lobby.php";
                 }
             }
             
@@ -131,12 +126,13 @@ function color_select(color, player)
 function highlight_selected()
 {
     var color_p1 = getCookie("color_p1");
-    document.getElementById(color_p1 + "_p1").style.borderStyle = "solid";
-    document.getElementById(color_p1 + "_p1").style.borderWidth = "2px";
-    document.getElementById(color_p1 + "_p1").style.borderColor = "#FF0000";
+    document.write(color_p1);
+    // document.getElementById(color_p1 + "_p1").style.borderStyle = "solid";
+    // document.getElementById(color_p1 + "_p1").style.borderWidth = "2px";
+    // document.getElementById(color_p1 + "_p1").style.borderColor = "#FF0000";
 
     var color_p2 = getCookie("color_p2");
-    document.getElementById(color_p2 + "_p2").style.borderStyle = "solid";
-    document.getElementById(color_p2 + "_p2").style.borderWidth = "2px";
-    document.getElementById(color_p2 + "_p2").style.borderColor = "#FF0000";
+    // document.getElementById(color_p2 + "_p2").style.borderStyle = "solid";
+    // document.getElementById(color_p2 + "_p2").style.borderWidth = "2px";
+    // document.getElementById(color_p2 + "_p2").style.borderColor = "#FF0000";
 }
