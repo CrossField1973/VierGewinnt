@@ -10,7 +10,7 @@ Team:<br>
   
   
   
-#Set-Up
+# Set-Up
 
 1. Install XAMPP or any other apache distribution<br>
 2. Unzip the folder to C:\xampp\htdocs, if you're using XAMPP<br>
